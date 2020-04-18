@@ -150,9 +150,8 @@ public class activity_signup extends AppCompatActivity {
             protected void onPostExecute(String s) {
                 if(s.equals("success")){
                     Toast.makeText(activity_signup.this,s, Toast.LENGTH_SHORT).show();
-                    Bundle bndlanim= ActivityOptions.makeCustomAnimation(getApplicationContext(),R.anim.come_into_right,R.anim.go_out_right).toBundle();
                     Intent intent = new Intent(activity_signup.this, LoginActivity.class);//call next activity on successful registration
-                    startActivity(intent, bndlanim);
+                    startActivity(intent);
                     activity_signup.this.finish();
                 }
                 else{
@@ -165,9 +164,8 @@ public class activity_signup extends AppCompatActivity {
 
     }
     public void onBackPressed() {
-        Bundle bndlanim= ActivityOptions.makeCustomAnimation(getApplicationContext(),R.anim.come_into_right,R.anim.go_out_right).toBundle();
         Intent intent = new Intent(activity_signup.this, LoginActivity.class);
-        startActivity(intent, bndlanim);										//call next activity on back press
+        startActivity(intent);										//call next activity on back press
         activity_signup.this.finish();
         super.onBackPressed();
     }
