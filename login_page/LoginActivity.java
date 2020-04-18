@@ -103,9 +103,8 @@ public class LoginActivity extends AppCompatActivity {
      protected void onPostExecute(String s) {
 
         if(s.equals("success")){
-             Bundle bndlanim1= ActivityOptions.makeCustomAnimation(getApplicationContext(),R.anim.come_into_left,R.anim.go_out_left).toBundle();
              Intent intent1 = new Intent(LoginActivity.this, Home.class).putExtra("usnm",username); //call the next class on successfull login
-             startActivity(intent1, bndlanim1);
+             startActivity(intent1);
              LoginActivity.this.finish();
          }
          else{
@@ -137,11 +136,4 @@ public class LoginActivity extends AppCompatActivity {
         },2000);
     }
 
-    public void Register(View view) {
-        Bundle bndlanim= ActivityOptions.makeCustomAnimation(getApplicationContext(),R.anim.come_into_left,R.anim.go_out_left).toBundle();
-        Intent intent = new Intent(LoginActivity.this, activity_signup.class); //call signup page by calling Register function on click of register button
-        startActivity(intent, bndlanim);
-        LoginActivity.this.finish();
-
-    }
 }
